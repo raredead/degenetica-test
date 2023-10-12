@@ -1,0 +1,40 @@
+.view-prodact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 0 0 0 35px;
+}
+
+.prodact-card {
+    width: 333px;
+    height: 356px;
+    margin-bottom: 50px;
+
+    &__brand {
+        font-family: 'PT Sans';
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--color-font-second);
+        padding-top: 16px;
+    }
+
+    &__txt {
+        font-family: 'PT Sans';
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--color-font-main);
+        padding: 8px 0 16px;
+    }
+}
+
+.img-card {
+    background-color: #F8F8FA;
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__main {}
+}
