@@ -4,6 +4,7 @@ import AsideCategoties from './components/Aside/AsideCategories.vue';
 import AsidePrice from './components/Aside/AsidePrice.vue';
 import AsideBrand from './components/Aside/AsideBrand.vue';
 import AsideSize from './components/Aside/AsideSize.vue';
+import ProdactView from './components/ProdactView/ProdactView.vue';
 </script>
 
 <template>
@@ -16,7 +17,9 @@ import AsideSize from './components/Aside/AsideSize.vue';
         <AsideBrand />
         <AsideSize />
       </div>
-      <div class="content__block"></div>
+      <div class="content__block">
+        <ProdactView />
+      </div>
     </main>
   </div>
 </template>
