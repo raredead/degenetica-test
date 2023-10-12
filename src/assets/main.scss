@@ -16,7 +16,7 @@
         max-width: 1240px;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 414px) {
         max-width: 375px;
         padding: 0;
     }
@@ -25,8 +25,16 @@
 main {
     display: flex;
     padding: 25px 0 35px;
+
+    @media (max-width: 800px) {
+        padding: 0;
+    }
 }
 
 .assides__block{
     max-width: 280px;
+
+    @media (max-width: 800px) {
+        display: none;
+    }
 }
