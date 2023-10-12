@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
     <header class="header">
         <div class="header__logo logo-header">
@@ -24,9 +28,5 @@
         </ul>
     </header>
 </template>
-
-<script setup>
-
-</script>
 
 <style lang="scss" scoped src="./HeaderProject.scss"/>

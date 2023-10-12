@@ -7,10 +7,11 @@
     &__logo {
         display: flex;
         align-items: center;
-        padding-left: 25px;
+        margin-left: 45px;
 
         @media (max-width: 1440px) {
             padding-left: 55px;
+            margin-left: 0
         }
 
         @media (max-width: 375px) {
