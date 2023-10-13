@@ -1,0 +1,84 @@
+1. 
+Каким будет результат следующей операции на языке JavaScript: [1, 2, 3] + [4, 5, 6]. Почему был получен такой результат?
+
+Результатом операции будет стока "1, 2, 3, 4, 5, 6". Оператов '+' в JS выполняет сложение только строк и чисел. В данном случае операндами выстпупают массивы, и они сначала преобразуются в строки, а затем выполняется сложение строк.
+
+2. 
+Дано выражение:
+var a = {b: 1};
+var b = a;
+b.b = 2;
+console.log(a);
+Что будет выведено в консоли? Почему был получен такой результат?
+
+В консоли получим {b: 2} потому что переменные 'a' и 'b' ссылаются на один объект. 'b.b' = 2 здесь изменяется значение объекта 'b' на который ссылается переменная 'b', и 'a' так же ссылается на этот объект, и получается что изменения свойств 'b' повлияет на значение 'a'.
+
+3. 
+Написать регулярное выражение, совпадающее с числом с плавающей точкой с точностью до 3 знака после запятой.
+
+/^\d+(\.\d{3})?$/
+^ - начало строки
+\d+ - последовательность чисел
+(\.\d{3})? - соответсвует десятичной дроби до 3 знаком после запятой
+& - конец строки
+
+4. 
+Написать регулярное выражение, по которому определяется является ли строка ссылкой. Объяснить, как оно работает.
+Пример:
+const isURL = str => true
+isURL(‘https://example.com’)
+isURL(‘http://www.example.com’)
+
+/^(https?:\/\/)?(www\.)?[a-z0-9\-]+\.[a-z]{2,6}(\/[a-z0-9\-\._~%\?&//=]*)?$/i
+^ - началос строки
+(https?:\/\/)? - префикс протокола HTTP или HTTPS, который является необязательным.
+(www\.)? -  префикс "www.", который также является необязательным.
+[a-z0-9\-]+ - последовательность из одной или более букв, цифр или дефисов.
+\.[a-z]{2,6} - соответствует символу точки, за которым следует последовательность из двух или шести букв.
+(\/[a-z0-9\-\._~%\?&//=]*)? - произвольная последовательность символов, включая слэш, цифры, буквы, дефис, точку, подчеркивание, символ процента, вопросительный знак, символ амперсанда, две косые черты и знак равенства.
+
+5.
+Каким будет значение переменной text после выполнения данного JavaScript кода? 
+function setText(message) { 
+text = message;
+ }
+ var text = 'Текст';
+ setText('Сообщение');
+Опишите, почему получился такой результат.
+
+После выполнения функции значение переменной 'text' будет 'Сообщение'. Функция setText принимает в качестве аргумента значение, которое записывается в 'text'. Изначально в 'text' лежит значение 'Текст', но после вызова функции setText с аргументом 'Сообщение', функция записывает это значение в переменную 'text'.
+
+6. 
+Написать функцию для получения список всех артикулов товаров в консоли браузера на странице https://groupprice.ru/categories/jenskaya-odejda?referer_from=main_catalog
+
+const url = 'https://groupprice.ru/categories/jenskaya-odejda?referer_from=main_catalog';
+
+fetch(url)
+  .then((response) => response.text())
+  .then((html) => {
+    const soup = new DOMParser().parseFromString(html, 'text/html');
+    const productIds = [];
+
+    for (const product of soup.querySelectorAll('div._prodact')) {
+      productIds.push(product.dataset.id);
+    }
+
+    console.log(productIds);
+  });
+
+7. 
+Написать функцию для получения всех характеристики товара в консоли браузера в виде объекта в формате attributeName: value на странице https://nir-vanna.ru/product/smesitel-bravat-art-f175109c-dlya-rakoviny/
+
+async function getProductAttributes(url) {
+    const response = await fetch(url);
+    const html = await response.text();
+    const soup = new DOMParser().parseFromString(html, "text/html");
+    const attributes = {};
+  
+    for (const element of soup.querySelectorAll(".tab-pane-product-parameter-item")) {
+      const attribute = element.querySelector(".parameter-name").textContent;
+      const value = element.querySelector(".parameter-value").innerText;
+      attributes[attribute] = value;
+    }
+    return attributes;
+}
