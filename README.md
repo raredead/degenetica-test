@@ -1,29 +1,17 @@
 # degenetica-test
+# Demo: https://raredead.github.io/degenetica-test/
 
-This template should help get you started developing with Vue 3 in Vite.
+##### Инструкция по запуску проекта
+* Установить [Node JS](https://nodejs.org/en)
+* Скачайте [репозиторий](https://github.com/raredead/Cyberia-test-task.git) проекта используя команду 
+> git clone
+* Для установки зависимостей проекта (Node modules) в скачанную папку проекта, откройте терминал и введите команду
+> npm install
+* Для запуска проекта введите команду 
+> npm run dev
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+##### Список технологий
+* HTML
+* SCSS
+* Vue.js
+* Vite
